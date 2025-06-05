@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KILT Staff Directory</title>
+  <style>
+    body {
+      /*background: url('(http://www.transparenttextures.com/patterns/always-grey.png'), #00ba79;
+      margin: 0;
+      font-family: Arial, sans-serif;*/
+      background-color: #b0a89f;
+background-image: url(http://www.transparenttextures.com/patterns/large-leather.png);
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+    }
+
+    h1 {
+      margin-top: 40px;
+      text-align: center;
+      color: #cc0000;
+      font-size: 3rem;
+      padding: 00px;
+    }
+     h2 {
+      margin-top: 40px;
+      text-align: center;
+      color: #d4362b;
+      font-size: 4rem;
+      padding: 0 10px;
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin: 20px 10px 40px 10px;
+      padding: 0 5px;
+    }
+
+    .flip-card {
+      background-color: transparent;
+      width: 280px;
+      height: 350px;
+      perspective: 1000px;
+      flex-shrink: 0;
+    }
+
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+      box-shadow: 0 4px 10px #D4AF37(196, 227, 210, 0.8);
+      border-radius: 16px;
+      background: transparent;
+    }
+
+    .flip-card:hover .flip-card-inner,
+    .flip-card:focus-within .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-front,
+    .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 16px;
+      backface-visibility: hidden;
+      background: url('https://www.transparenttextures.com/patterns/white-leather.png'), /*#2e231ea8*/#4E342E;
+      color: rgb(14, 11, 11);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .flip-card-front img {
+  border-radius: 60% / 60%; /* Oval shape */
+  width: 170px;
+  height: 230px; /* Corrected height */
+  object-fit: cover;
+  border: 2px solid /*#a3d10c*/#4E342E;
+  margin-bottom: 10px;
+  max-width: 100%;
+}
+
+    
+
+    .flip-card-front h2 {
+      margin: 8px;
+      color: solid#141414;
+      font-size: 1.3rem;
+    }
+
+    .flip-card-front p {
+      font-size: 1rem;
+      color: #050000;
+      margin-top: 4px;
+    }
+
+    .flip-card-back {
+      transform: rotateY(180deg);
+      justify-content: center;
+      padding-top: 40px;
+    }
+
+    .flip-card-back p {
+      margin: 6px 0;
+      font-size: 1rem;
+    }
+
+    .flip-card-back a {
+      margin-top: auto;
+      background: #fd7e14;
+      padding: 10px 20px;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background 0.3s;
+      font-size: 1rem;
+    }
+
+    .flip-card-back a:hover,
+    .flip-card-back a:focus {
+      background: #e17000;
+      outline: none;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 900px) {
+      .flip-card {
+        width: 45%;
+        height: 320px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .flip-card {
+        width: 90%;
+        height: 300px; /* allow height to grow based on content */
+        min-height: 320px;
+      }
+      .flip-card-front img {
+        width: 140px;
+        height: 160px;
+      }
+      h1 {
+        font-size: 1.5rem;
+      }
+      .flip-card-front h3 {
+        font-size: 1.1rem;
+      }
+      .flip-card-front p,
+      .flip-card-back p,
+      .flip-card-back a {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- ========== Administration ========== -->
+  <h2>Administration</h2>
+  <div class="row">
+    <!-- 2 Centered Cards -->
+    <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img src="https://kilt.karnataka.gov.in/storage/pdf-files/staff photos/director.jpg"><h3>Siddalingappa B Pujari</h3><p>Director</p></div><div class="flip-card-back"><p><b>Email:</b> a1@kilt.in</p><p><b>Date: 01-01-2024</b></p></div></div></div>
+    <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img src=".jpg"><h3>Gurudath</h3><p>Deputy Director</p></div><div class="flip-card-back"><p>Email: a2@kilt.in</p><p>Date: 01-01-2024</p></div></div></div>
+  </div>
+  <div class="row">
+    <!-- 4 Cards Below -->
+    <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img src="\\192.172.1.50\public\kilt staff\netra.JPG"><h3>Nethravathi</h3><p>Assistant manager()</p></div><div class="flip-card-back"><p>Email: a3@kilt.in</p><p>Date: 01-01-2024</p><a href="#">Resume</a></div></div></div>
+    <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img src="\\192.172.1.50\public\kilt staff\hema.JPG"><h3>Hemalatha</h3><p>Assistant manager()</p></div><div class="flip-card-back"><p>Email: a4@kilt.in</p><p>Date: 01-01-2024</p><a href="#">Resume</a></div></div></div>
+    <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img src="\\192.172.1.50\public\kilt staff\ramya.JPG"><h3>Ramya</h3><p>Assistant manager()</p></div><div class="flip-card-back"><p>Email: a5@kilt.in</p><p>Date: 01-01-2024</p><a href="#">Resume</a></div></div></div>
+    <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img src="\\192.172.1.50\public\kilt staff\dimple.JPG"><h3>Dimple M S</h3><p>Assistant manager()</p></div><div class="flip-card-back"><p>Email: a6@kilt.in</p><p>Date: 01-01-2024</p><a href="#">Resume</a></div></div></div>
+  </div>
+
+  <!-- ========== Lecturers ========== -->
+  <h2>Lecturers</h2>
+  <div class="row">
+    <!-- 2 Centered Cards -->
+    <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img src=".jpg"><h3>Ranjan K J</h3><p>Subject</p></div><div class="flip-card-back"><p>Email: l1@kilt.in</p><p>Date: 01-01-2024</p><a href="#">Resume</a></div></div></div>
+    <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img src="\\192.172.1.50\public\kilt staff\neeraj.JPG"><h3>Neeraj kumar goutam</h3><p>Subject</p></div><div class="flip-card-back"><p>Email: l2@kilt.in</p><p>Date: 01-01-2024</p><a href="#">Resume</a></div></div></div>
+  </div>
+  <div class="row">
+    <!-- 5 Cards Below -->
+    <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img src="\\192.172.1.50\public\kilt staff\adarsh.JPG"><h3>Adarsh D B</h3><p>Subject</p></div><div class="flip-card-back"><p>Qualification: Phd in chemisrty & bio technology</p><p>Email: l3@kilt.in</p><p>Date: 01-01-2024</p><a href="#">Resume</a></div></div></div>
+    <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img src=".jpg"><h3>Mamatha Kumari</h3><p>Subject</p></div><div class="flip-card-back"><p>Email: l6@kilt.in</p><p>Date: 01-01-2024</p><a href="#">Resume</a></div></div></div>
+    <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img src="\\192.172.1.50\public\kilt staff\sriraksha.JPG"><h3>Sriraksha</h3><p>Subject</p></div><div class="flip-card-back"><p>Email: l4@kilt.in</p><p>Date: 01-01-2024</p><a href="#">Resume</a></div></div></div>
+    <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img src="\\192.172.1.50\public\kilt staff\sarika.JPG"><h3>Sarika Kumari</h3><p>Subject</p></div><div class="flip-card-back"><p>Email: l5@kilt.in</p><p>Date: 01-01-2024</p><a href="#">Resume</a></div></div></div>
+    
+    
+  </div>
+
+  <!-- ========== Instructors ========== -->
+  <h2>Instructors</h2>
+  <div class="row">
+    <!-- 7 Cards in a row -->
+    <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img src="\\192.172.1.50\public\kilt staff\govardan.JPG"><h3>Govardan</h3><p>Skill</p></div><div class="flip-card-back"><p>Email: i1@kilt.in</p><p>Date: 01-01-2024</p><a href="#">Resume</a></div></div></div>
+    <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img src="\\192.172.1.50\public\kilt staff\udhay.JPG"><h3>Udaya kumar</h3><p>Skill</p></div><div class="flip-card-back"><p>Email: i1@kilt.in</p><p>Date: 01-01-2024</p><a href="#">Resume</a></div></div></div>
+    <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img src="\\192.172.1.50\public\kilt staff\vijay.JPG"><h3>Vijay</h3><p>Skill</p></div><div class="flip-card-back"><p>Email: i1@kilt.in</p><p>Date: 01-01-2024</p><a href="#">Resume</a></div></div></div>
+    <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img src="\\192.172.1.50\public\kilt staff\sapna.JPG"><h3>Sapna</h3><p>Skill</p></div><div class="flip-card-back"><p>Email: i1@kilt.in</p><p>Date: 01-01-2024</p><a href="#">Resume</a></div></div></div>
+    <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img src="\\192.172.1.50\public\kilt staff\raju.JPG"><h3>Raju</h3><p>Skill</p></div><div class="flip-card-back"><p>Email: i1@kilt.in</p><p>Date: 01-01-2024</p><a href="#">Resume</a></div></div></div>
+    <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img src="\\192.172.1.50\public\kilt staff\perumal.JPG"><h3>Perumal</h3><p>Skill</p></div><div class="flip-card-back"><p>Email: i1@kilt.in</p><p>Date: 01-01-2024</p><a href="#">Resume</a></div></div></div>
+    
+    <!-- Repeat for 6 more instructors -->
+  </div>
+
+  <!-- ========== IT Department ========== -->
+  <h2>IT Department</h2>
+  <div class="row">
+    <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img src="C:\Users\manu3\Desktop\Picsart_25-02-16_19-47-09-658 - Copy.jpg"><p>Manoj C</p><p>Network Admin</p></div><div class="flip-card-back"><P>Qualification: BCA</P><p>Subjects taken: IT SKILLS</p><p>Email: it@kilt.in</p><p>Date: 01-01-2024</p><a href="#">Resume</a></div></div></div>
+  </div>
+
+</body>
+</html>

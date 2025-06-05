@@ -1,0 +1,538 @@
+/* Base Styles */
+:root {
+    --leather-dark: #5c3e24;
+    --leather-medium: #8b6b3d;
+    --leather-light: #c19a6b;
+    --leather-stitch: #ffffff;
+    --gold-accent: #d4af37;
+    --text-dark: #333333;
+    --text-light: #f8f8f8;
+}
+.oval-img {
+  border-radius: 60% / 60%; /* Oval shape */
+  width: 150px;
+  height: 200px;
+  object-fit: cover;
+  border: 2px solid #4E342E;
+  margin-bottom: 10px;
+  max-width: 100%;
+  display: block;         /* Makes image a block element */
+  margin-left: auto;      /* Horizontal centering */
+  margin-right: auto;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f9f5f0;
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.2;
+    color: #d4af37;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Header Styles */
+.leather-header {
+    background-color: var(--leather-dark);
+    background-image: url('../images/leather-texture.jpg'); /* Ensure this path is correct if image is used */
+    background-size: cover;
+    color: var(--text-light);
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    height: 60px;
+    width: auto;
+}
+
+.logo-text h1 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.logo-text p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.leather-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.leather-nav a {
+    padding: 10px 15px;
+    font-weight: 600;
+    position: relative;
+}
+
+.leather-nav a.active,
+.leather-nav a:hover {
+    color: var(--gold-accent);
+}
+
+.leather-nav a.active:after,
+.leather-nav a:hover:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 15px;
+    right: 15px;
+    height: 2px;
+    background-color: var(--gold-accent);
+}
+
+.dropdown {
+    position: relative;
+}
+
+.leather-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--leather-medium);
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    display: none;
+    z-index: 1;
+}
+
+.leather-dropdown a {
+    display: block;
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dropdown:hover .leather-dropdown {
+    display: block;
+}
+
+.mobile-menu {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Video Hero Section Updates */
+.video-hero {
+    position: relative;
+    height: 100vh; /* Adjust as needed */
+    overflow: hidden;
+    margin-top: 90px; /* Assuming header height is 90px */
+    background-color: var(--leather-dark); /* Fallback color */
+    background-image: url('../images/hero-fallback.jpg'); /* Fallback image, ensure path is correct if used */
+    background-size: cover !important; /* MODIFIED for proper fallback image display */
+    background-position: center;
+}
+.video-background.playing + .leather-overlay + .hero-content { /* This rule might need adjustment if .leather-overlay is used */
+    opacity: 1;
+}
+
+.video-background {
+    position: absolute; /* MODIFIED for proper positioning */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.video-background video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* position: center; REMOVED - invalid and unnecessary */
+}
+
+
+/*.leather-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(92, 62, 36, 0.6), rgba(92, 62, 36, 0.8));
+    z-index: 5;
+}*/
+
+.hero-content {
+    position: absolute;
+    top: 89%; /* Position towards the bottom */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; /* MODIFIED: 'bottom' is invalid, 'center' is more common */
+    color: var(--text-light);
+    width: 90%;
+    max-width: 800px;
+    z-index: 10; /* Ensure content is on top of the video background */
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+.leather-heading {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.scroll-down {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--text-light);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    z-index: 11; /* Ensure it's above video but potentially below other crucial popups */
+}
+
+.scroll-down i {
+    font-size: 1.5rem;
+    animation: bounce 2s infinite; /* Ensure bounce animation is defined in animations.css */
+}
+
+/* Sections Common Styles */
+.section-title {
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+    text-align: center;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+/* Quick Links Section */
+.quick-links {
+    padding: 80px 0;
+    background-color: #fff;
+}
+
+.links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+/* About Section */
+.about-section {
+    padding: 80px 0;
+    background-color: #f9f5f0;
+}
+
+.about-content {
+    margin-bottom: 40px;
+}
+
+.about-stats {
+    display: flex;
+    justify-content: space-around; /* Changed from space-between for better spacing */
+    margin: 40px 0;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--leather-medium);
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 1rem;
+    color: var(--text-dark);
+}
+
+/* Programs Section */
+.programs-section {
+    padding: 80px 0;
+    background-color: #fff;
+}
+
+/* News Section */
+.news-section {
+    padding: 80px 0;
+    background-color: #f9f5f0;
+}
+
+/* Footer */
+.leather-footer {
+    background-color: var(--leather-dark);
+    color: var(--text-light);
+    padding: 60px 0 20px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-col h3 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+    color: var(--gold-accent); /* Ensure footer headings are visible */
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a:hover {
+    color: var(--gold-accent);
+    padding-left: 5px;
+}
+
+.contact-info p {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-info a {
+  text-decoration: none;
+  color: inherit; 
+}
+
+.contact-info a:hover {
+  color: var(--gold-accent); 
+  text-decoration: underline;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background-color: var(--gold-accent);
+    color: var(--leather-dark);
+}
+
+.newsletter form {
+    display: flex;
+    margin-top: 10px;
+}
+
+.newsletter input {
+    flex: 1;
+    padding: 10px 15px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--text-light);
+    border-radius: 4px 0 0 4px; /* Rounded corners for input */
+}
+
+.newsletter button {
+    padding: 10px 15px; /* Ensure button padding matches input */
+    background-color: var(--gold-accent);
+    color: var(--leather-dark);
+    border: none;
+    cursor: pointer;
+    border-radius: 0 4px 4px 0; /* Rounded corners for button */
+    font-weight: 600;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .leather-header .container { /* Ensure header elements align correctly */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .leather-nav {
+        display: none; /* Hide desktop nav */
+        position: absolute;
+        top: 100%; /* Position below header */
+        left: 0;
+        width: 100%;
+        background-color: var(--leather-dark); 
+        flex-direction: column; /* Stack nav items vertically */
+        padding: 10px 0;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .leather-nav.active { /* Show mobile nav when active */
+        display: flex;
+    }
+    .leather-nav ul {
+        flex-direction: column; /* Stack nav items vertically */
+        width: 100%;
+        align-items: center; /* Center nav items */
+    }
+    .leather-nav ul li {
+        width: 100%;
+        text-align: center;
+    }
+    .leather-nav a {
+        display: block; /* Make links full width */
+        padding: 15px; /* Increase padding for touch targets */
+    }
+    .leather-nav a.active:after,
+    .leather-nav a:hover:after {
+        left: 50%; /* Center underline */
+        transform: translateX(-50%);
+        width: 50px; /* Fixed width for underline */
+    }
+    .dropdown:hover .leather-dropdown { /* Adjust dropdown for mobile */
+        position: static;
+        display: block;
+        background-color: var(--leather-medium); /* Slightly different bg for contrast */
+        box-shadow: none;
+        width: 100%;
+    }
+    .leather-dropdown a {
+        text-align: center;
+    }
+    .mobile-menu {
+        display: block; /* Show hamburger icon */
+    }
+    
+    .hero-content {
+        width: 95%;
+    }
+    
+    .leather-heading {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo-text h1 {
+        font-size: 1.2rem;
+    }
+    
+    .leather-heading {
+        font-size: 2rem;
+    }
+    
+    .hero-content p {
+        font-size: 1rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center; /* Center buttons when stacked */
+        gap: 15px; /* Increased gap for stacked buttons */
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    .about-stats {
+        flex-direction: column; /* Stack stats on smaller screens */
+        gap: 30px; /* Add gap between stacked stat items */
+    }
+}
+
+@media (max-width: 576px) {
+    .logo-container {
+        /* flex-direction: column; /* Stack logo and text on very small screens */
+        /* text-align: center; */
+        gap: 10px; /* Adjust gap */
+    }
+    
+    .logo {
+        height: 50px;
+    }
+    .logo-text h1 {
+        font-size: 1.1rem; /* Further reduce font size */
+    }
+    .logo-text p {
+        font-size: 0.8rem;
+    }
+    .video-hero {
+        margin-top: 75px; /* Adjust margin if header height changes due to logo stacking */
+    }
+     .hero-content {
+        top: 85%; /* Adjust content position slightly for smaller screens if needed */
+    }
+    .leather-heading {
+        font-size: 1.8rem;
+    }
+     .quick-links, .about-section, .programs-section, .news-section {
+        padding: 60px 0; /* Reduce padding on smaller screens */
+    }
+}
